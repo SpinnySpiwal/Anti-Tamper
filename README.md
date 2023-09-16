@@ -1,5 +1,3 @@
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
-
 # Lua Bundling Template
 
 Simple Template for using ~~LuaCC~~ A custom Lua Bundler inspired by LuaCC.
