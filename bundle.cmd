@@ -1,2 +1,4 @@
 @echo off
-node bundler/build.js
+echo Compiling...
+powershell -Command .\bundle.ps1
+echo Finished!

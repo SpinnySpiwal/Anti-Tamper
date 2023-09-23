@@ -1,0 +1,521 @@
+--discord.gg/boronide, code generated using luamin.js™
+
+
+
+--discord.gg/boronide, code generated using luamin.js™
+
+
+
+if _VERSION:gmatch("Lua %d+")() and not _VERSION == "Luau" then
+	error("Sorry! Normal Lua is not supported at the moment due to internal issues.")
+end;
+local OriginENV = _ENV and function()
+	return _ENV
+end or getfenv()
+local isHazed = OVHZ_OBFUSCATED;
+local DisableCrash = true;
+local DebugEnabled = false;
+local HideNum = OVHZ_HIDE_NUM or function(Number)
+	return Number
+end;
+local HideStr = OVHZ_STR_ENC or function(Str)
+	return Str
+end;
+local function tbContains(table, value)
+	for _, v in pairs(table) do
+		if type(v) == "string" then
+			if 100000 < #value then
+				return
+			end;
+			if v == value or string.find(value, v) then
+				return true
+			end
+		else
+			if v == value then
+				return true
+			end
+		end
+	end;
+	return false
+end;
+local IsNotLuau, IsLuau;
+local ExecutorsTB = {
+	'Fluxus',
+	'ScriptWare',
+	'Electron',
+	'Trigon',
+	'Krnl'
+}
+local ExecutorsWhitelistTB = {
+	'Hydrogen',
+	'ScriptWare'
+}
+local HasDebugInfo = pcall(function()
+	local DebugInfo = debug.getinfo ~= nil and (function()
+	end) or (function()
+		error()
+	end)
+	DebugInfo()
+end)
+local HasIdentifyExec = pcall(function()
+	local Executor = identifyexecutor()
+end)
+local function CheckExecutorsWhitelistTB()
+	if HasIdentifyExec then
+		local executor = identifyexecutor()
+		if tbContains(ExecutorsWhitelistTB, executor) then
+			return true
+		end
+	else
+		return true
+	end;
+	return false
+end;
+local HasStrDump = pcall(function()
+	local checkTest = string.dump(function()
+	end)
+end)
+local Luau = HideStr("Luau")
+local function CheckExecutorsTB()
+	if HasIdentifyExec then
+		local executor = identifyexecutor()
+		for i = 1, #ExecutorsTB do
+			if executor:find(ExecutorsTB[i]) then
+				return false
+			end
+		end
+	end;
+	return (_VERSION == Luau and HasDebugInfo)
+end;
+IsLuau = HasIdentifyExec and ((_VERSION == Luau) and CheckExecutorsTB() and HasDebugInfo) or (_VERSION == Luau and not HasDebugInfo)
+IsNotLuau = HasIdentifyExec and not((_VERSION ~= Luau) and CheckExecutorsTB() and HasDebugInfo) or (_VERSION ~= Luau and HasDebugInfo)
+local JITWhitelist = {
+	HideStr("remove"),
+	HideStr("foreachi"),
+	HideStr("getn"),
+	HideStr("len"),
+	HideStr("foreach"),
+	HideStr("move")
+}
+local Valid = true;
+local lineTB = {}
+for _, t in pairs({
+	debug,
+	table,
+	string,
+	coroutine,
+	os
+}) do
+	local DebugInfo;
+	for k, v in pairs(t) do
+		if IsLuau and DebugInfo == nil then
+			DebugInfo = {
+				debug.info(v, "slnaf")
+			}
+			DebugInfo["currentline"] = DebugInfo[2]
+			DebugInfo["func"] = DebugInfo[5]
+		elseif DebugInfo == nil then
+			DebugInfo = debug.getinfo(v)
+		end;
+		pcall(function()
+			local short_src;
+			local what;
+			short_src = IsLuau and DebugInfo[1] or DebugInfo.short_src;
+			what = IsLuau and HideStr("C") or DebugInfo.what;
+			local JITCheck = jit and tbContains(JITWhitelist, k)
+			if JITCheck and what == "C" then
+				print("Invalid")
+				Valid = false
+			end;
+			if ((what ~= "C") or short_src ~= "[C]") and not JITCheck then
+				print("Broken Flag")
+				Valid = false
+			end;
+			if IsLuau then
+				table.insert(lineTB, DebugInfo[2])
+			else
+				table.insert(lineTB, DebugInfo.currentline)
+			end
+		end)
+	end
+end;
+for i = 2, #lineTB do
+	for j = 1, i do
+		if lineTB[i] ~= lineTB[i - j + 1] then
+			Valid = false
+		end
+	end
+end;
+local getreg = IsLuau and (function()
+	return {
+		_LOADED = {
+			_G = _G;
+			debug = debug
+		}
+	}
+end) or (debug.getregistry or debug.getreg) and (debug.getregistry or debug.getreg) or (function()
+	return {
+		_LOADED = {
+			_G = _G;
+			debug = debug
+		}
+	}
+end)
+local tbl = {
+	getfenv(0)._G or _G or _ENV,
+	getreg()._LOADED._G,
+	IsLuau and getreg()._LOADED.debug.info(getfenv, "f")(0)._G or getreg()._LOADED.debug.getinfo(getfenv).func(0)._G,
+}
+for i = 1, #tbl do
+	for j = 1, #tbl do
+		if i ~= j and tbl[i] ~= tbl[j] then
+			Valid = false
+		end
+	end
+end;
+local LineTB = {
+	{
+		pcall(function()
+			local eLine = 062 - {
+				["lZNgi"] = '0',
+				["9B8qa"] = {
+					["ag0JP"] = 'wP',
+					["9RBiP"] = {
+						["VDO1S"] = 3,
+						["db3x1"] = 'Jv'
+					},
+					["f5hEN"] = {
+						["NaZSu"] = 'Y'
+					}
+				}
+			} ^ 480;
+			return 'RKS' * {
+				["oAV4W"] = 561,
+				["XTiJJ"] = 'Mr',
+				["KOpZk"] = 6
+			} - 'VNW'
+		end)
+	},
+	{
+		pcall(function()
+			local eLine = 9 - {
+				["0uiG0"] = 9,
+				["DUNXZ"] = {
+					["BCQex"] = 5
+				}
+			} ^ 'w5'
+			return {
+				["21J7S"] = 4
+			} * {
+				["v6Utb"] = 71,
+				["YtNzh"] = {
+					["yiLUq"] = '2xl'
+				}
+			} - {
+				["yXpbr"] = 0,
+				["4OIKF"] = 'Cos',
+				["QoCoJ"] = {
+					["xM13j"] = 95,
+					["3lvHs"] = {
+						["ZTWJb"] = 59,
+						["7dWBI"] = {
+							["cilX2"] = '0',
+							["a8KMs"] = 553
+						},
+						["C45Uj"] = {
+							["IhSH1"] = 298,
+							["2hjgU"] = {
+								["SdzA3"] = 'TG'
+							}
+						}
+					}
+				}
+			}
+		end)
+	}
+}
+local regexes = {
+	HideStr("^.*:(%d+):.*$"),
+	HideStr(":([%d].-):"),
+	HideStr("^.*:%s*(%d+):.*$"),
+	HideStr(":%s*(%d+)%s*:"),
+	HideStr(":(%d+):"),
+	HideStr("^.*:%s*(%d*):.*$"),
+	HideStr(":([%d]%a-):"),
+	HideStr("^.*:%s*(%d+):?%d*.*$"),
+	HideStr(":([%d]+):")
+}
+local n1, n2 = 2, 1;
+local errLine = tonumber((string.match(tostring(LineTB[1][2]), regexes[n1])))
+local errLine2 = tonumber((string.match(tostring(LineTB[2][2]), regexes[n2])))
+if true then
+	local flagTB = {
+		HideStr("elosnociutnirp"),
+		HideStr("elbatatemwartes"),
+		HideStr("vnegteg"),
+		HideStr("gnirtsdaol"),
+		HideStr("elifdneppa"),
+		HideStr("rorreiutnirp"),
+		HideStr("rreelosnocr"),
+		HideStr("elbatatemwarteg"),
+		HideStr("tuptuotnirp"),
+		HideStr("elifdaol"),
+		HideStr("tnirpelosnoc"),
+		HideStr("golaidetirw"),
+		HideStr("eriuqer"),
+		HideStr("dohtematemkooh"),
+		HideStr("nrawelosnoc"),
+		HideStr("rreelosnoc"),
+		HideStr("tseuqer_ptth"),
+		HideStr("nraw"),
+		HideStr("ofnielosnocr"),
+		HideStr("nrawiutnirp"),
+		HideStr("gubedtnirp"),
+		HideStr("noitcnufkooh"),
+		HideStr("vneftes"),
+		HideStr("nrawelosnocr"),
+		HideStr("tnirpelosnocr"),
+		HideStr("vnefteg"),
+		HideStr("nepo"),
+		HideStr("tseuqer"),
+		HideStr("oi"),
+		HideStr("rorre"),
+		HideStr("G_"),
+		HideStr("daol"),
+		HideStr("elbatatemteg"),
+		HideStr("etirw"),
+		HideStr("elifod"),
+		HideStr("elifetirw"),
+		HideStr("tnirp")
+	}
+	local traceback = debug.traceback()
+	if _VERSION ~= Luau then
+		local filename = traceback:match(".+:[0-9]+:")
+		local function split(str, delimiter)
+			local result = {}
+			for word in str:gmatch(delimiter .. '([^' .. delimiter .. ']*)') do
+				table.insert(result, word)
+			end;
+			return result
+		end;
+		local file = split(filename, "\n")[1]
+		local remove = "        "
+		local filename = file:sub(2, #file):gsub(":[0-9]+:", "")
+		local lineTable = split(io.open(filename, "r"):read("*a"), "\n")
+		for i = 1, #lineTable do
+			if tbContains(flagTB, lineTable[i]) then
+				Valid = false
+			end
+		end
+	end;
+	if _VERSION ~= "Luau" then
+		local _ENV = _ENV and _ENV or getfenv()
+		if getmetatable(_ENV) then
+			Valid = false
+		end
+	end;
+	for i = 1, #flagTB do
+		local currentFlag = flagTB[i]
+		local debugInfoOne;
+		if IsNotLuau and HasDebugInfo then
+			debugInfoOne = debug.getinfo(1)
+		elseif IsLuau then
+			debugInfoOne = {
+				debug.info(1, "slnaf")
+			}
+			debugInfoOne["currentline"] = debugInfoOne[2]
+			debugInfoOne["func"] = (type(debugInfoOne[5]) == "function" and debugInfoOne[5] or function()
+			end)
+			debugInfoOne["name"] = debugInfoOne[5]
+		end;
+		local debugInfoTwo;
+		local hasFunc2;
+		if CheckExecutorsWhitelistTB() then
+			hasFunc2 = pcall(function()
+				if IsLuau then
+					local checkTest = {
+						debug.info(2, "slnaf")
+					}
+				else
+					local checkTest = debug.getinfo(2)
+				end
+			end)
+		else
+			hasFunc2 = false
+		end;
+		pcall(function()
+			if IsLuau then
+				(function()
+					debugInfoTwo = {
+						debug.info(2, "slnaf")
+					}
+				end)()
+				debugInfoTwo["currentline"] = debugInfoTwo[2]
+				debugInfoTwo["func"] = (type(debugInfoTwo[5]) == "function" and debugInfoTwo[5] or function()
+				end)
+				debugInfoTwo["name"] = debugInfoTwo[5]
+			else
+				(function()
+					debugInfoTwo = debug.getinfo(2)
+				end)()
+			end
+		end)
+		local dbgFunc = debugInfoOne.func;
+		local dbgFunc_2;
+		if CheckExecutorsWhitelistTB() then
+			dbgFunc_2 = debugInfoTwo.func
+		end;
+		if HasStrDump then
+			for k, v in pairs(getfenv()) do
+				if type(v) == "function" then
+					local dWhat = debug.getinfo(v)
+					if dWhat == "C" then
+						if pcall(function()
+							string.dump(v)
+						end) then
+							Valid = false
+						end
+					end
+				elseif type(v) == "table" then
+					for k2, v2 in pairs(v) do
+						if type(v2) == "function" then
+							local dWhat = debug.getinfo(v2)
+							if dWhat == "C" then
+								if pcall(function()
+									string.dump(v2)
+								end) then
+									Valid = false
+								end
+							end
+						end
+					end
+				end
+			end
+		end;
+		local sDump;
+		local sDump2;
+		pcall(function()
+			sDump = string.dump(dbgFunc)
+			if hasFunc2 and CheckExecutorsWhitelistTB() then
+				sDump2 = string.dump(dbgFunc_2)
+			end;
+			if sDump:find(currentFlag) or sDump2:find(currentFlag) then
+				Valid = false
+			end
+		end)
+		local dInfo1Line = debugInfoOne.currentline;
+		local errLine3 = tonumber(debug.traceback():match("^.-:%s*(%d+):?%d*.+$"))
+		local errLine4 = tonumber(debug.traceback():match(":(%d*)"))
+		local execName = (HasIdentifyExec and identifyexecutor() or "")
+		if errLine ~= errLine2 or errLine ~= errLine3 or errLine ~= errLine4 or errLine ~= dInfo1Line then
+			Valid = false
+		end;
+		if errLine2 ~= errLine3 or errLine2 ~= errLine4 or errLine2 ~= dInfo1Line then
+			Valid = false
+		end;
+		if errLine3 ~= errLine4 or errLine3 ~= dInfo1Line or errLine4 ~= dInfo1Line then
+			Valid = false
+		end;
+		local traceLine = tonumber(debug.traceback():match("^.-:%s*(%d+):?%d*.+$"))
+		if tonumber(debug.traceback():match("^.-:%s*(%d+):?%d*.+$")) ~= traceLine then
+			Valid = false
+		end
+	end
+end;
+if HasStrDump then
+	local pc = pcall;
+	local sDump = {
+		pc(function()
+			string.dump(pc)
+		end)
+	}
+	if (sDump[2] == nil and sDump[1] == false) and (tonumber(string.match(_VERSION, "Lua (.*)")) > 5) or (_VERSION:find("5.2") and not _ENV) then
+		Valid = false
+	end;
+	local num = tonumber(string.match(_VERSION, "Lua (.*)")) and tonumber(string.match(_VERSION, "Lua (.*)")) or 5;
+	if num > tonumber('' .. tostring'51') / 10 then
+		Valid = false
+	end
+end;
+if (_ENV and function()
+	return _ENV
+end or getfenv)(1) ~= OriginENV then
+	while true do
+		if isexecutorclosure and crash__ then
+			crash__()
+		elseif OVHZ_OBFUSCATED then
+			OVHZ_CRASH()
+		else
+			Valid = false;
+			local function callOverflow()
+				callOverflow()
+			end;
+			callOverflow()
+		end
+	end;
+	error("Tamper Detected.")
+elseif not Valid then
+	while true do
+		if isexecutorclosure and crash__ then
+			crash__()
+		elseif OVHZ_OBFUSCATED then
+			OVHZ_CRASH()
+		else
+			Valid = false;
+			local function callOverflow()
+				callOverflow()
+			end;
+			callOverflow()
+		end
+	end
+else
+	local printedWarning = false;
+	while true do
+		if Valid then
+			break
+		end;
+		if isexecutorclosure and crash__ then
+			crash__()
+		elseif OVHZ_OBFUSCATED then
+			OVHZ_CRASH()
+		else
+			Valid = false;
+			local function callOverflow()
+				if not printedWarning then
+					print("An unknown exception has occurred, Please contact SpiwalSec at discord.gg/ZMC3yyzjjf or contact spinnyspiwal on Discord..")
+					printedWarning = true
+				end;
+				callOverflow()
+			end;
+			local function flow()
+				coroutine.wrap(callOverflow)()
+				flow()
+			end;
+			flow()
+		end
+	end
+end;
+local FakeMacros = true;
+local Name = FakeMacros and "ESecure" or "SpiwalSec"
+function SPIWALSEC_OBFUSCATED()
+	return true
+end;
+function getobfuscatorclosure(truncated)
+	return truncated and Name or Name .. " v3.53.3 RSR VMPatch 1"
+end;
+function getVersionInfo(versionType)
+	versionType = versionType:lower() or ""
+	if versionType == "" then
+		return "Nothing was inputted!"
+	end;
+	if versionType == "antitamper" then
+		return "v1.2.3"
+	end;
+	if versionType == "unparser" then
+		return "v1.2.4"
+	end;
+	if versionType == "main" then
+		return "v3.53.3"
+	end;
+	return "Unknown Version Type, version types are AntiTamper, Unparser & Main."
+end

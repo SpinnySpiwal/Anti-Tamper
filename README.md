@@ -1,52 +1,96 @@
-# Lua Bundling Template
+<span align="center">
 
-Simple Template for using ~~LuaCC~~ A custom Lua Bundler inspired by LuaCC.
+  [![Build and Deploy](https://github.com/YieldingExploiter/HydroxideOne/actions/workflows/build.yml/badge.svg)](https://github.com/YieldingExploiter/HydroxideOne/actions/workflows/build.yml)
 
-To initially set shit up, install [NodeJS](https://nodejs.org/), verify it's installed by running `node --version` (if this errors, restart your PC & try again), then run `npm i` to install dependencies.
+</span>
 
-Once dependencies are installed, you can build using `npm run build` (`npm run build --no-minify` for no minification). If you want a development server, you can run `npm run dev`.
+## Script
 
-The index file is `index`. This is the file that gets run, and can load other scripts using `require`.
+```lua
+-------------------------------
+-- HydroxideOne Loader       --
+-- https://one.hydroxide.cc/ --
+-------------------------------
+loadstring(game:HttpGetAsync(string.format('https://one.hydroxide.cc/%s.lua','latest')))(); -- replace `latest` with `stable` to get the latest stable release
+```
 
-## Customization
-After running build the first time, a new `bundler-config` directory will be created. This contains the prefix & suffix, including the custom `require()` implementation aswell as other functionality.
+# HydroxideOne
 
-## Variables
+Single-File variant of [Hydroxide](https://github.com/Upbolt/Hydroxide).
 
-The following variables are provided out-of-the-box (*note: these are provided by [blb](https://github.com/MokiyCodes/blb/), not the template itself*):
+## How
 
-| name              | description                                     | example value                              |
-|-------------------|-------------------------------------------------|--------------------------------------------|
-| `__hash`          | SHA-512 Hash of the Source of the current file. | `e6578[...]da685` (128 hex digits)         |
-| `__dirname`       | The Script's Directory, relative to `src`       | `path/to/some/script/directory`            |
-| `__filename`      | The Script's Filename                           | `path/to/some/script/directory/script.lua` |
-| `__just_filename` | The Script's Filename without the Directory     | `script.lua`                               |
+Using a slightly modified version of [BreadCity/LuaCC-Template](https://github.com/BreadCity/LuaCC-Template)@[02da590](https://github.com/BreadCity/LuaCC-Template/commit/02da590db588de2aa24f4505f69d50adab443203), HydroxideOne's [bundle.ps1](bundle.ps1)/[bundle.sh](bundle.sh) generate bundled variants of the whole project (aprox. 5160 lines total) to provide a single-file variant, that doesn't perform any httpgets.
 
-## Module Resolution
+## Why
 
-### Indexes
-You can resolve a file at `test/a/index.lua` by requiring `test/a`.
+### 1. Initial Load Times
 
-### Paths
-Both POSIX & Win32 paths are supported.
+Users of Hydroxide may be discouraged to go back to hydroxide after their first attempt, considering nothing is cached yet.<br/>
+Hydroxide _does_ cache every file downloaded, per-release, to the disk, so it's not a big deal for users who have already used the software. **However**, new users of Hydroxide, switching from something like [SimpleSpy](https://github.com/exxtremestuffs/SimpleSpySource/), might just move back due to the initial load times of Hydroxide.
+
+This is where HydroxideOne comes in. HydroxideOne bundles all the _code_ (**not** UI) in one script, which loads things from a table of scripts (see [How](#how) above).
+
+### 2. Filesystem
+
+When caching dozens of files, like Hydroxide does, you need to perform several file operations on each load, which may not be optimal.
+
+A better solution would be a single-file-cache, but that's far from the best solution.
+
+The best solution is to remove the need for a code cache in the first place, by bundling everything in one file. (see [bundle.lua](https://one.hydroxide.cc/loader))
+
+### 3. Bytecode Loading
+
+Every time you call `loadstring(<some code>)`, luau will compile the code to bytecode, and then load the bytecode. This can be slow, even if you already have the code downloaded. HydroxideOne's bundled code only needs to be compiled once, since it's bundled in a single file.
+
+### 4. Version-Pinning
+
+Excluding the UI, if you want a specific version of the code, you can simply download that release's bundle.lua and use it.
 
 ## License
 
-Copyright (C) 2022 YieldingCoder
+All code written by YieldingCoder in this repository is under the MIT License.<br/>
+A significant portion of the code is from [Hydroxide](https://github.com/Upbolt/Hydroxide) and therefor is under whatever license that repo is under at the time of reading this.
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
+## Hydroxide
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
+<i>General purpose pen-testing tool for games on the Roblox engine</i>
 
-You should have received [a copy of the GNU Affero General Public License](./LICENSE.md)
-along with this program. If not, see <https://www.gnu.org/licenses/>.
+Report issues to our Discord server: https://discord.gg/DJxBwAX
 
----
+<p align="center">
+    <img src="https://cdn.discordapp.com/attachments/633472429917995038/722143730500501534/Hydroxide_Logo.png"/>
+    </br>
+    <img src="https://cdn.discordapp.com/attachments/694726636138004593/742408546334933002/unknown.png" width="677px"/>
+</p>
 
-Please note that output files must also be licensed under the AGPL-3.0, and therefor, must disclose their source. The only exception to this, unless an exception is granted by Yielding#3961 (898971210531078164) is Bread Hub.
+### Features
+
+- Upvalue Scanner
+  - View/Modify Upvalues
+  - View first-level values in table upvalues
+  - View information of closure
+- Constant Scanner
+  - View/Modify Constants
+  - View information of closure
+- Script Scanner
+  - View general information of scripts (source, protos, constants, etc.)
+  - Retrieve all protos found in GC
+- Module Scanner
+  - View general information of modules (return value, source, protos, constants, etc.)
+  - Retrieve all protos found in GC
+- RemoteSpy
+  - Log calls of remote objects (RemoteEvent, RemoteFunction, BindableEvent, BindableFunction)
+  - Ignore/Block calls based on parameters passed
+  - Traceback calling function/closure
+- ClosureSpy
+  - Log calls of closures
+  - View general information of closures (location, protos, constants, etc.)
+
+More to come, soon.
+
+## Images/Videos
+
+<p align="center">
+    <img src="https://i.gyazo.com/63afdd764cdca533af5ebca843217a7e.gif" />
+</p>

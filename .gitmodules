@@ -1,3 +1,0 @@
-[submodule "bundler"]
-	path = bundler
-	url = git@github.com:MokiyCodes/blb.git

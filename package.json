@@ -4,11 +4,6 @@
   "author": "YieldingCoder <yieldingc@pm.me>",
   "license": "AGPL-3.0-OR-LATER",
   "scripts": {
-    "build": "node bundler/build.js",
-    "dev": "node bundler/dev.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "luamin": "^1.0.4"
+    "build": ".\\bundle.cmd"
   }
 }

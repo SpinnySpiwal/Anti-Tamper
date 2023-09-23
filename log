@@ -1,0 +1,429 @@
+true	xpcall
+true	tostring
+true	print
+true	unpack
+true	require
+true	getfenv
+true	setmetatable
+true	next
+true	assert
+true	tonumber
+true	rawequal
+true	collectgarbage
+true	getmetatable
+true	module
+true	rawset
+true	pcall
+true	newproxy
+true	type
+true	select
+true	gcinfo
+true	pairs
+true	rawget
+true	loadstring
+true	ipairs
+true	dofile
+true	setfenv
+true	load
+true	error
+true	loadfile
+sub	function: 0x141f08620
+upper	function: 0x141f08670
+len	function: 0x141f08490
+gfind	function: 0x141f083f0
+rep	function: 0x141f08580
+find	function: 0x141f08300
+match	function: 0x141f08530
+char	function: 0x141f08260
+dump	function: 0x141f082b0
+gmatch	function: 0x141f083f0
+reverse	function: 0x141f085d0
+byte	function: 0x141f08210
+format	function: 0x141f08350
+gsub	function: 0x141f08440
+lower	function: 0x141f084e0
+preload	table: 0x141f06360
+loadlib	function: 0x141f05e50
+loaded	table: 0x141f05000
+loaders	table: 0x141f05ef0
+cpath	./?.so;/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so
+config	/
+;
+?
+!
+-
+path	./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua
+seeall	function: 0x141f05ea0
+exit	function: 0x141f07ce0
+setlocale	function: 0x141f07e00
+date	function: 0x141f07be0
+getenv	function: 0x141f07d30
+difftime	function: 0x141f07c30
+remove	function: 0x141f07d80
+time	function: 0x141f07e60
+clock	function: 0x141f07b90
+tmpname	function: 0x141f07eb0
+rename	function: 0x141f07db0
+execute	function: 0x141f07c90
+lines	function: 0x141f074a0
+write	function: 0x141f07670
+close	function: 0x141f073f0
+flush	function: 0x141f07420
+open	function: 0x141f074d0
+output	function: 0x141f07520
+type	function: 0x141f07640
+read	function: 0x141f075c0
+stderr	file (0x1efecd208)
+stdin	file (0x1efecd0d8)
+input	function: 0x141f07450
+stdout	file (0x1efecd170)
+popen	function: 0x141f07570
+tmpfile	function: 0x141f075f0
+-1	lua
+0	lua.lua
+log	function: 0x141f08c70
+max	function: 0x141f08cc0
+acos	function: 0x141f08810
+huge	inf
+ldexp	function: 0x141f08bd0
+pi	3.1415926535898
+cos	function: 0x141f089f0
+tanh	function: 0x141f08ff0
+pow	function: 0x141f08db0
+deg	function: 0x141f08a40
+tan	function: 0x141f09040
+cosh	function: 0x141f089a0
+sinh	function: 0x141f08f00
+random	function: 0x141f08e50
+randomseed	function: 0x141f08ea0
+frexp	function: 0x141f08b80
+ceil	function: 0x141f08950
+floor	function: 0x141f08ae0
+rad	function: 0x141f08e00
+abs	function: 0x141f087c0
+sqrt	function: 0x141f08fa0
+modf	function: 0x141f08d60
+asin	function: 0x141f08860
+min	function: 0x141f08d10
+mod	function: 0x141f08b30
+fmod	function: 0x141f08b30
+log10	function: 0x141f08c20
+atan2	function: 0x141f088b0
+exp	function: 0x141f08a90
+sin	function: 0x141f08f50
+atan	function: 0x141f08900
+getupvalue	function: 0x141f095f0
+debug	function: 0x141f09400
+sethook	function: 0x141f09680
+getmetatable	function: 0x141f095c0
+gethook	function: 0x141f09460
+setmetatable	function: 0x141f09730
+setlocal	function: 0x141f096d0
+traceback	function: 0x141f097c0
+setfenv	function: 0x141f09650
+getinfo	function: 0x141f094b0
+setupvalue	function: 0x141f09760
+getlocal	function: 0x141f09500
+getregistry	function: 0x141f09560
+getfenv	function: 0x141f09430
+setn	function: 0x141f069b0
+insert	function: 0x141f06910
+getn	function: 0x141f06870
+foreachi	function: 0x141f06810
+maxn	function: 0x141f068c0
+foreach	function: 0x141f067c0
+concat	function: 0x141f06770
+sort	function: 0x141f06a00
+remove	function: 0x141f06960
+resume	function: 0x141f05b10
+yield	function: 0x141f05c50
+status	function: 0x141f05bb0
+wrap	function: 0x141f05c00
+create	function: 0x141f05ac0
+running	function: 0x141f05b60
+true	xpcall
+true	tostring
+true	print
+true	unpack
+true	require
+true	getfenv
+true	setmetatable
+true	next
+true	assert
+true	tonumber
+true	rawequal
+true	collectgarbage
+true	getmetatable
+true	module
+true	rawset
+true	pcall
+true	newproxy
+true	type
+true	select
+true	gcinfo
+true	pairs
+true	rawget
+true	loadstring
+true	ipairs
+true	dofile
+true	setfenv
+true	load
+true	error
+true	loadfile
+sub	function: 0x141f08620
+upper	function: 0x141f08670
+len	function: 0x141f08490
+gfind	function: 0x141f083f0
+rep	function: 0x141f08580
+find	function: 0x141f08300
+match	function: 0x141f08530
+char	function: 0x141f08260
+dump	function: 0x141f082b0
+gmatch	function: 0x141f083f0
+reverse	function: 0x141f085d0
+byte	function: 0x141f08210
+format	function: 0x141f08350
+gsub	function: 0x141f08440
+lower	function: 0x141f084e0
+preload	table: 0x141f06360
+loadlib	function: 0x141f05e50
+loaded	table: 0x141f05000
+loaders	table: 0x141f05ef0
+cpath	./?.so;/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so
+config	/
+;
+?
+!
+-
+path	./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua
+seeall	function: 0x141f05ea0
+exit	function: 0x141f07ce0
+setlocale	function: 0x141f07e00
+date	function: 0x141f07be0
+getenv	function: 0x141f07d30
+difftime	function: 0x141f07c30
+remove	function: 0x141f07d80
+time	function: 0x141f07e60
+clock	function: 0x141f07b90
+tmpname	function: 0x141f07eb0
+rename	function: 0x141f07db0
+execute	function: 0x141f07c90
+lines	function: 0x141f074a0
+write	function: 0x141f07670
+close	function: 0x141f073f0
+flush	function: 0x141f07420
+open	function: 0x141f074d0
+output	function: 0x141f07520
+type	function: 0x141f07640
+read	function: 0x141f075c0
+stderr	file (0x1efecd208)
+stdin	file (0x1efecd0d8)
+input	function: 0x141f07450
+stdout	file (0x1efecd170)
+popen	function: 0x141f07570
+tmpfile	function: 0x141f075f0
+-1	lua
+0	lua.lua
+log	function: 0x141f08c70
+max	function: 0x141f08cc0
+acos	function: 0x141f08810
+huge	inf
+ldexp	function: 0x141f08bd0
+pi	3.1415926535898
+cos	function: 0x141f089f0
+tanh	function: 0x141f08ff0
+pow	function: 0x141f08db0
+deg	function: 0x141f08a40
+tan	function: 0x141f09040
+cosh	function: 0x141f089a0
+sinh	function: 0x141f08f00
+random	function: 0x141f08e50
+randomseed	function: 0x141f08ea0
+frexp	function: 0x141f08b80
+ceil	function: 0x141f08950
+floor	function: 0x141f08ae0
+rad	function: 0x141f08e00
+abs	function: 0x141f087c0
+sqrt	function: 0x141f08fa0
+modf	function: 0x141f08d60
+asin	function: 0x141f08860
+min	function: 0x141f08d10
+mod	function: 0x141f08b30
+fmod	function: 0x141f08b30
+log10	function: 0x141f08c20
+atan2	function: 0x141f088b0
+exp	function: 0x141f08a90
+sin	function: 0x141f08f50
+atan	function: 0x141f08900
+getupvalue	function: 0x141f095f0
+debug	function: 0x141f09400
+sethook	function: 0x141f09680
+getmetatable	function: 0x141f095c0
+gethook	function: 0x141f09460
+setmetatable	function: 0x141f09730
+setlocal	function: 0x141f096d0
+traceback	function: 0x141f097c0
+setfenv	function: 0x141f09650
+getinfo	function: 0x141f094b0
+setupvalue	function: 0x141f09760
+getlocal	function: 0x141f09500
+getregistry	function: 0x141f09560
+getfenv	function: 0x141f09430
+setn	function: 0x141f069b0
+insert	function: 0x141f06910
+getn	function: 0x141f06870
+foreachi	function: 0x141f06810
+maxn	function: 0x141f068c0
+foreach	function: 0x141f067c0
+concat	function: 0x141f06770
+sort	function: 0x141f06a00
+remove	function: 0x141f06960
+resume	function: 0x141f05b10
+yield	function: 0x141f05c50
+status	function: 0x141f05bb0
+wrap	function: 0x141f05c00
+create	function: 0x141f05ac0
+running	function: 0x141f05b60
+true	xpcall
+true	tostring
+true	print
+true	unpack
+true	require
+true	getfenv
+true	setmetatable
+true	next
+true	assert
+true	tonumber
+true	rawequal
+true	collectgarbage
+true	getmetatable
+true	module
+true	rawset
+true	pcall
+true	newproxy
+true	type
+true	select
+true	gcinfo
+true	pairs
+true	rawget
+true	loadstring
+true	ipairs
+true	dofile
+true	setfenv
+true	load
+true	error
+true	loadfile
+sub	function: 0x141f08620
+upper	function: 0x141f08670
+len	function: 0x141f08490
+gfind	function: 0x141f083f0
+rep	function: 0x141f08580
+find	function: 0x141f08300
+match	function: 0x141f08530
+char	function: 0x141f08260
+dump	function: 0x141f082b0
+gmatch	function: 0x141f083f0
+reverse	function: 0x141f085d0
+byte	function: 0x141f08210
+format	function: 0x141f08350
+gsub	function: 0x141f08440
+lower	function: 0x141f084e0
+preload	table: 0x141f06360
+loadlib	function: 0x141f05e50
+loaded	table: 0x141f05000
+loaders	table: 0x141f05ef0
+cpath	./?.so;/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so
+config	/
+;
+?
+!
+-
+path	./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua
+seeall	function: 0x141f05ea0
+exit	function: 0x141f07ce0
+setlocale	function: 0x141f07e00
+date	function: 0x141f07be0
+getenv	function: 0x141f07d30
+difftime	function: 0x141f07c30
+remove	function: 0x141f07d80
+time	function: 0x141f07e60
+clock	function: 0x141f07b90
+tmpname	function: 0x141f07eb0
+rename	function: 0x141f07db0
+execute	function: 0x141f07c90
+lines	function: 0x141f074a0
+write	function: 0x141f07670
+close	function: 0x141f073f0
+flush	function: 0x141f07420
+open	function: 0x141f074d0
+output	function: 0x141f07520
+type	function: 0x141f07640
+read	function: 0x141f075c0
+stderr	file (0x1efecd208)
+stdin	file (0x1efecd0d8)
+input	function: 0x141f07450
+stdout	file (0x1efecd170)
+popen	function: 0x141f07570
+tmpfile	function: 0x141f075f0
+-1	lua
+0	lua.lua
+log	function: 0x141f08c70
+max	function: 0x141f08cc0
+acos	function: 0x141f08810
+huge	inf
+ldexp	function: 0x141f08bd0
+pi	3.1415926535898
+cos	function: 0x141f089f0
+tanh	function: 0x141f08ff0
+pow	function: 0x141f08db0
+deg	function: 0x141f08a40
+tan	function: 0x141f09040
+cosh	function: 0x141f089a0
+sinh	function: 0x141f08f00
+random	function: 0x141f08e50
+randomseed	function: 0x141f08ea0
+frexp	function: 0x141f08b80
+ceil	function: 0x141f08950
+floor	function: 0x141f08ae0
+rad	function: 0x141f08e00
+abs	function: 0x141f087c0
+sqrt	function: 0x141f08fa0
+modf	function: 0x141f08d60
+asin	function: 0x141f08860
+min	function: 0x141f08d10
+mod	function: 0x141f08b30
+fmod	function: 0x141f08b30
+log10	function: 0x141f08c20
+atan2	function: 0x141f088b0
+exp	function: 0x141f08a90
+sin	function: 0x141f08f50
+atan	function: 0x141f08900
+getupvalue	function: 0x141f095f0
+debug	function: 0x141f09400
+sethook	function: 0x141f09680
+getmetatable	function: 0x141f095c0
+gethook	function: 0x141f09460
+setmetatable	function: 0x141f09730
+setlocal	function: 0x141f096d0
+traceback	function: 0x141f097c0
+setfenv	function: 0x141f09650
+getinfo	function: 0x141f094b0
+setupvalue	function: 0x141f09760
+getlocal	function: 0x141f09500
+getregistry	function: 0x141f09560
+getfenv	function: 0x141f09430
+setn	function: 0x141f069b0
+insert	function: 0x141f06910
+getn	function: 0x141f06870
+foreachi	function: 0x141f06810
+maxn	function: 0x141f068c0
+foreach	function: 0x141f067c0
+concat	function: 0x141f06770
+sort	function: 0x141f06a00
+remove	function: 0x141f06960
+resume	function: 0x141f05b10
+yield	function: 0x141f05c50
+status	function: 0x141f05bb0
+wrap	function: 0x141f05c00
+create	function: 0x141f05ac0
+running	function: 0x141f05b60
